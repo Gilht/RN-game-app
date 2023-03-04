@@ -10,14 +10,21 @@ export default function App() {
 
   const [userNumber, setUserNumber] = useState();
   const [gameIsOver, setGameIsOver] = useState(true)
+  const [guessRounds, setGuessRounds] = useState(0)
 
   const selectedNumberHandler = (chosenNumber) => {
     setUserNumber(chosenNumber);
     setGameIsOver(false);  
   }
 
-  const gameOverHandler = () => {
+  const gameOverHandler = (numberRounds) => {
     setGameIsOver(true);
+    setGuessRounds(numberRounds);
+  }
+
+  const startNewGame = () => {
+    setUserNumber(null),
+    setGuessRounds(0)
   }
 
   let screen =  <StartGameScreen  onPickNumber={selectedNumberHandler}/>;
@@ -27,7 +34,7 @@ export default function App() {
   }
 
   if (gameIsOver && userNumber  ) {
-    screen = <GameOverScreen/>
+    screen = <GameOverScreen userNumber={userNumber} roundsNumber={guessRounds} onStartGame={startNewGame}/>
   }
 
   

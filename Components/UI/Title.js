@@ -18,6 +18,8 @@ title: {
     borderWidth: 2,
     paddingTop: 10,
     borderColor: Colors.guessingColor,
-    padding:36
+    padding:36,
+    maxWidth: '80%',
+    width: 300
   }
 })
