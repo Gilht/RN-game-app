@@ -52,7 +52,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 
     const newRandmNumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess);
     setCurrentGuess(newRandmNumber);
-    setGuessRounds(previous => [newRandmNumber, ...previous])
+    setGuessRound((previous )=> [newRandmNumber, ...previous])
   }
 
   const guessRoundListLength = guessRound.length;

@@ -48,7 +48,7 @@ export default function App() {
         imageStyle={styles.backgroundImage}
       >
         <SafeAreaView styles={styles.container}>
-              {screen}
+        <GameScreen userNumber={userNumber} onGameOver={gameOverHandler}/>
         </SafeAreaView>
       </ImageBackground>
     </LinearGradient>
